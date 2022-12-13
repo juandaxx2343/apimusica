@@ -9,6 +9,7 @@ router.get('/', getUsuario)
 router.post('/', [
     check("correo", "El correo es obligatorio.").not().isEmpty(),
     check("password", "La contraseña debe tener 5 o más caracteres.").isLength({ min: 5}),
+    check("rol", "El rol de la banda es obligatorio.").not().isEmpty(),
     validacion
 ],
     postUsuario)

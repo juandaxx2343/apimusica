@@ -8,8 +8,7 @@ class server{
         this.port = process.env.port
 
         this.usuariosPath = '/api/usuarios'
-        this.ventasPath = '/api/ventas'
-        this.anchetasPath = '/api/anchetas'
+        this.instrumentosPath = '/api/instrumentos'
         this.authPath = '/api/auth'
 
         this.middlewares()
@@ -33,8 +32,7 @@ class server{
     routes() {
         this.app.use(this.authPath, require('../routes/auth'))
         this.app.use(this.usuariosPath, require('../routes/usuarios'))
-        this.app.use(this.ventasPath, require('../routes/ventas'))
-        this.app.use(this.anchetasPath, require('../routes/anchetas'))
+        this.app.use(this.instrumentosPath, require('../routes/instrumentos'))
     }
 
     listen() {
